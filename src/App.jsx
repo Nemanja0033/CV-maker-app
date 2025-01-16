@@ -4,7 +4,9 @@ import CvForm from './components/CvForm'
 const App = () => {
   return (
     <div className='flex justify-self-center'>
-      <CvForm />
+      <div className='flex-row mt-32'>
+        <CvForm />
+      </div>
     </div>
   )
 }
