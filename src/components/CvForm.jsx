@@ -1,55 +1,68 @@
 import React from 'react'
+import Input from './Input'
+import { CircleUser, GraduationCap, BriefcaseBusiness } from 'lucide-react'
+import Button from './Button'
 
 const CvForm = () => {
   return (
-    <div className="flex-row shadow-lg bg-second rounded-lg">
-        <h1 className='text-start font-bold text-2xl mb-5 ml-3'>PERSONAL INFO</h1>
+    <div className="flex-row shadow-lg bg-second bg-opacity-35 backdrop-blur-sm rounded-lg text-second">
+       <div className='flex items-center justify-between m-3'>
+            <span className='text-start font-bold text-strong text-2xl mb-5 ml-3 flex items-center gap-2'>PERSONAL INFO<CircleUser /></span>
+            <Button text={'Preview'} />
+       </div>
 
         <div className="md:flex flew-row justify-center gap-4 items-center mb-5 m-3">
             <label htmlFor="name">First Name</label>
-            <input className="w-full rounded-lg md:h-6 h-9 bg-primary" name="name" type="text"/>
+            <Input name={'name'} />
             <label htmlFor="surname">Last Name</label>
-            <input className="w-full rounded-lg md:h-6 h-9 bg-primary" name="surname" type="text" />
+            <Input name={'surname'} />
         </div>
 
         <div className="md:flex flew-row justify-center gap-4 items-center m-3">
             <label htmlFor="phone">Phone</label>
-            <input className="w-full rounded-lg md:h-6 h-9 bg-primary" name="phone" type="text" />
+            <Input name={'phone'} />
             <label htmlFor="job">Job Title</label>
-            <input className="w-full rounded-lg md:h-6 h-9 bg-primary" name="job" type="text" />
+            <Input name={'job'} />
         </div>
 
         <div className="md:flex flew-row justify-center gap-4 items-center m-3">
             <label htmlFor="address">Address</label>
-            <input className="w-full rounded-lg md:h-6 h-9 bg-primary" name="address" type="text" />
+            <Input name={'address'} />
         </div>
 
-        <h1 className='text-start font-bold text-2xl mt-12 mb-5 ml-3'>EDUCATION</h1>
+        <h1 className='text-start font-bold text-2xl mt-12 mb-5 ml-3 flex items-center  text-strong gap-2'>EDUCATION <GraduationCap /></h1>
 
         <div className="md:flex flew-row justify-center gap-4 items-center m-3">
             <label htmlFor="deggre">Deggre</label>
-            <input className="w-full rounded-lg md:h-6 h-9 bg-primary" name="deggre" type="text" />
+            <Input name={'deggre'} />
         </div>
 
         <div className="md:flex flew-row justify-center gap-4 items-center m-3">
             <label htmlFor="School/Uni">School/Uni</label>
-            <input className="w-full rounded-lg md:h-6 h-9 bg-primary" name="School/Uni" type="text" />
+            <Input name={'School/Uni'} />
             <label htmlFor="City">City</label>
-            <input className="w-full rounded-lg md:h-6 h-9 bg-primary" name="City" type="text" />
+            <Input name={'City'} />
         </div>
 
-        <h1 className='text-start font-bold text-2xl mt-12 mb-5 ml-3'>EXPERIENCES</h1>
+        <h1 className='text-start font-bold text-2xl mt-12 mb-5 ml-3 flex items-center  text-strong gap-2'>EXPERIENCES <BriefcaseBusiness /></h1>
 
         <div className="md:flex flew-row justify-center gap-4 items-center m-3">
             <label htmlFor="Job Title">Job Title</label>
-            <input className="w-full rounded-lg md:h-6 h-9 bg-primary" name="Job Title" type="text" />
+            <Input name={'Job Title'} />
         </div>
 
         <div className="md:flex flew-row justify-center gap-4 items-center m-3">
             <label htmlFor="Company">Company</label>
-            <input className="w-full rounded-lg md:h-6 h-9 bg-primary" name="Company" type="text" />
+            <Input name={'Company'} />
             <label htmlFor="City">City</label>
-            <input className="w-full rounded-lg md:h-6 h-9 bg-primary" name="City" type="text" />
+            <Input name={'City'} />
+        </div>
+
+        <div className="md:flex flew-row justify-center gap-4 items-center m-3">
+            <label htmlFor="Language">Language</label>
+            <Input name={'Language'} />
+            <label htmlFor="level">Level</label>
+            <Input name={'level'} />
         </div>
     </div>
   )

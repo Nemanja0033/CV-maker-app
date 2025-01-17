@@ -9,6 +9,7 @@ export default {
     colors: {
       primary: '#D9EAFD',
       second: '#F8FAFC',
+      strong: '#3E5879',
     },
   },
   plugins: [],
