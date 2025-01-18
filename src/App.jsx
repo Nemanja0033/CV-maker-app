@@ -6,10 +6,36 @@ import Preview from './components/Preview';
 const App = () => {
 
   const [isPreview, setIsPreview] = useState(false);
+  const [cvData, setCvData] = useState({
+      firstName: '',
+      lastName: '',
+      phone: '',
+      jobTitle: '',
+      address: '',
+      degree: '',
+      school: '',
+      city1: '',
+      job: '',
+      company: '',
+      city2: '',
+      language: '',
+      level: '',
+    });
+  
 
   const handlePreview = () => {
-    setIsPreview(true);
+    setIsPreview(!isPreview);
   }
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setCvData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  console.log(isPreview)
 
   return (
     <div className="relative h-screen w-full">
@@ -24,11 +50,18 @@ const App = () => {
     <div className="flex-row mt-10 rounded-lg">
       {
         isPreview ? (
-          <Preview />
+          <Preview 
+            cvData={cvData}
+            handlePreview={handlePreview}
+          />
         )
         :
         (
-          <CvForm handlePreview={handlePreview} />
+          <CvForm 
+            handlePreview={handlePreview} 
+            handleChange={handleChange}
+            cvData={cvData}
+          />
         )
       }
     </div>

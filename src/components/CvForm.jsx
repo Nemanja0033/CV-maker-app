@@ -1,43 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Input from './Input';
 import { CircleUser, GraduationCap, BriefcaseBusiness, Eye } from 'lucide-react';
 import Button from './Button';
 
-const CvForm = ({handlePreview}) => {
-  const [cvData, setCvData] = useState({
-    firstName: '',
-    lastName: '',
-    phone: '',
-    jobTitle: '',
-    address: '',
-    degree: '',
-    school: '',
-    city1: '',
-    job: '',
-    company: '',
-    city2: '',
-    language: '',
-    level: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setCvData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+const CvForm = ({handlePreview, handleChange, cvData}) => {
 
   return (
     <div className="flex-row shadow-lg bg-second bg-opacity-35 backdrop-blur-sm rounded-lg text-second">
-      {cvData.firstName}
       <div className="flex items-center justify-between m-3">
         <span className="text-start font-bold text-strong text-2xl mb-5 ml-3 flex items-center gap-2">
           PERSONAL INFO <CircleUser />
         </span>
         <Button onclick={handlePreview} text={'Preview'} icon={<Eye size={20} />} />
       </div>
-      <h1>{cvData.firstName}</h1>
       <div className="md:flex flew-row justify-center gap-4 items-center mb-5 m-3">
         <label htmlFor="firstName">First Name</label>
         <Input
