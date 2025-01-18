@@ -3,7 +3,7 @@ import Input from './Input';
 import { CircleUser, GraduationCap, BriefcaseBusiness, Eye } from 'lucide-react';
 import Button from './Button';
 
-const CvForm = () => {
+const CvForm = ({handlePreview}) => {
   const [cvData, setCvData] = useState({
     firstName: '',
     lastName: '',
@@ -35,7 +35,7 @@ const CvForm = () => {
         <span className="text-start font-bold text-strong text-2xl mb-5 ml-3 flex items-center gap-2">
           PERSONAL INFO <CircleUser />
         </span>
-        <Button text={'Preview'} icon={<Eye size={20} />} />
+        <Button onclick={handlePreview} text={'Preview'} icon={<Eye size={20} />} />
       </div>
       <h1>{cvData.firstName}</h1>
       <div className="md:flex flew-row justify-center gap-4 items-center mb-5 m-3">
