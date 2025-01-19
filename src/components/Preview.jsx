@@ -61,6 +61,26 @@ const Preview = ({cvData, handlePreview}) => {
             <span className='flex items-center gap-1 mt-3'><MapPin size={20} />{cvData.city2}</span>
           </div>
       </div>
+
+      <h1 className='text-2xl m-3 font-bolds'>Skills & Languages</h1>
+
+      <div className='flex-row place-items-center'>
+        <div className='flex justify-start m-3 gap-10 items-center'>
+          <span className='font-bold text-xl'>Language:</span>
+          <span className='font-bold underline text-xl'>{cvData.language}</span>
+          <span className='font-bold text-xl'>Level:</span>
+          <span className='font-thin underline'>{cvData.level}</span>
+        </div>
+
+        <h2 className='font-bold m-3 text-xl mt-10'>Skills</h2>
+
+        <div className='flex justify-center m-3'>
+          <p>
+            {cvData.skills}
+          </p>
+        </div>
+      </div>
+
     </div>
   )
 }
