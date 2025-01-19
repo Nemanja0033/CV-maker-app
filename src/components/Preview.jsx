@@ -1,10 +1,10 @@
 import React from 'react'
 import Button from './Button'
-import {Pencil} from 'lucide-react'
+import {Pencil, MapPin, Mail, Phone, Linkedin} from 'lucide-react'
 
 const Preview = ({cvData, handlePreview}) => {
   return (
-    <div className="flex-row w-[700px] shadow-lg bg-second  rounded-lg text-strong">
+    <div className="flex-row w-[600px] shadow-lg bg-second  rounded-lg text-strong">
       <div className='flex justify-end items-center m-3'>
         <Button 
           onclick={handlePreview}
@@ -17,28 +17,49 @@ const Preview = ({cvData, handlePreview}) => {
         <h1>{cvData.lastName}</h1>
       </div>
 
-      <div className='flex justify-center text-2xl mb-12'>
+      <div className='flex justify-center text-3xl mt-3 mb-10'>
         <h1>{cvData.jobTitle}</h1>
       </div>
 
-      <div className='flex justify-center gap-64'>
-        <div className='flex-row place-items-center'>
-          <h1 className='font-bold text-2xl mb-3'>Education</h1>
-          <span>{cvData.degree}</span>
-          <br />
-          <span>{cvData.school}</span>
-          <br />
-          <span>{cvData.city1}</span>
-        </div>
-        
-        <div className='flex-row place-items-center'>
-          <h1 className='font-bold text-2xl mb-3'>Experiance</h1>
-          <span>{cvData.job}</span>
-          <br />
-          <span>{cvData.company}</span>
-          <br />
-          <span>{cvData.city2}</span>
-        </div>
+      <h1 className='text-2xl m-3 font-bolds'>Biography</h1>
+
+      <div className='flex justify-center m-3 mb-10'>
+        <p>
+          {cvData.bio}
+        </p>
+      </div>
+
+      <h1 className='text-2xl m-3 font-bolds'>Contact Info & Address</h1>
+
+      <div className='flex-row place-items-center m-3'>
+        <span className='flex items-center gap-1 underline cursor-pointer mt-3'><MapPin size={20} /> {cvData.address}</span>
+        <span className='flex items-center gap-1 underline cursor-pointer mt-3'><Mail size={20} /> {cvData.mail}</span>
+        <span className='flex items-center gap-1 underline cursor-pointer mt-3'><Phone size={20} /> {cvData.phone}</span>
+        <a href={cvData.linkedin} className='flex items-center gap-1 underline cursor-pointer mt-3'><Linkedin size={20} /> {cvData.linkedin}</a>
+      </div>
+
+      <h1 className='text-2xl m-3 font-bolds'>Education</h1>
+
+      <div className='flex justify-start m-3'>
+          <div className='flex-row'>
+            <span className='font-bold text-xl'>{cvData.degree}</span>
+            <br />
+            <span className='font-bold text-xl underline'>{cvData.school}</span>
+            <br />
+            <span className='flex items-center gap-1 mt-3'><MapPin size={20} />{cvData.city1}</span>
+          </div>
+      </div>
+
+      <h1 className='text-2xl m-3 font-bolds'>Experiance</h1>
+
+      <div className='flex justify-start m-3'>
+          <div className='flex-row'>
+            <span className='font-bold text-xl'>{cvData.job}</span>
+            <br />
+            <span className='font-bold text-xl underline'>{cvData.company}</span>
+            <br />
+            <span className='flex items-center gap-1 mt-3'><MapPin size={20} />{cvData.city2}</span>
+          </div>
       </div>
     </div>
   )

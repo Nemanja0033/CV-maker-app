@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Input from './Input';
-import { CircleUser, GraduationCap, BriefcaseBusiness, Eye, User } from 'lucide-react';
+import { CircleUser, GraduationCap, BriefcaseBusiness, Eye, User, Lightbulb, } from 'lucide-react';
 import Button from './Button';
 
 const CvForm = ({handlePreview, handleChange, cvData}) => {
@@ -24,6 +24,21 @@ const CvForm = ({handlePreview, handleChange, cvData}) => {
         <Input
           name="lastName"
           value={cvData.lastName}
+          onChange={handleChange}
+        />
+      </div>
+
+      <div className="md:flex flew-row justify-center gap-4 items-center m-3">
+        <label htmlFor="language">Email</label>
+        <Input
+          name="mail"
+          value={cvData.mail}
+          onChange={handleChange}
+        />
+        <label htmlFor="linkedin">Linkedin</label>
+        <Input
+          name="linkedin"
+          value={cvData.linkedin}
           onChange={handleChange}
         />
       </div>
@@ -132,6 +147,20 @@ const CvForm = ({handlePreview, handleChange, cvData}) => {
           className="w-full rounded-lg md:h-6 min-h-20 bg-primary" 
           name='bio' 
           placeholder='Tell something about you. . .'
+          onChange={handleChange}
+          />
+      </div>
+
+      <h1 className="text-start font-bold text-2xl mt-12 mb-5 ml-3 flex items-center text-strong gap-2">
+        Skills <Lightbulb />
+      </h1>
+
+      <div className="md:flex flew-row justify-center gap-4 items-center m-3">
+        <textarea 
+          className="w-full rounded-lg md:h-6 min-h-20 bg-primary" 
+          name='skills' 
+          placeholder='Write about your skills. . .'
+          onChange={handleChange}
           />
       </div>
     </div>

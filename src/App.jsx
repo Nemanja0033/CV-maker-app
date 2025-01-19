@@ -11,9 +11,11 @@ const App = () => {
       lastName: '',
       phone: '',
       mail: '',
-      biography: '',
+      linkedin: '',
+      bio: '',
       jobTitle: '',
       address: '',
+      skills: '',
       degree: '',
       school: '',
       city1: '',
@@ -42,7 +44,7 @@ const App = () => {
   return (
     <div className="relative h-screen w-full">
     <video 
-      className="absolute top-0 left-0 w-full md:h-[1000px] h-[1200px] object-cover z-0" 
+      className="absolute top-0 left-0 w-full md:h-[1100px] h-[1200px] object-cover z-0" 
       src={videoBg} 
       autoPlay 
       loop 
