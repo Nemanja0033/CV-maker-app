@@ -10,6 +10,8 @@ const App = () => {
       firstName: '',
       lastName: '',
       phone: '',
+      mail: '',
+      biography: '',
       jobTitle: '',
       address: '',
       degree: '',
@@ -40,7 +42,7 @@ const App = () => {
   return (
     <div className="relative h-screen w-full">
     <video 
-      className="absolute top-0 left-0 w-full md:h-[680px] h-[1200px] object-cover z-0" 
+      className="absolute top-0 left-0 w-full md:h-[1000px] h-[1200px] object-cover z-0" 
       src={videoBg} 
       autoPlay 
       loop 

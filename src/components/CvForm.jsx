@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Input from './Input';
-import { CircleUser, GraduationCap, BriefcaseBusiness, Eye } from 'lucide-react';
+import { CircleUser, GraduationCap, BriefcaseBusiness, Eye, User } from 'lucide-react';
 import Button from './Button';
 
 const CvForm = ({handlePreview, handleChange, cvData}) => {
@@ -121,6 +121,18 @@ const CvForm = ({handlePreview, handleChange, cvData}) => {
           value={cvData.level}
           onChange={handleChange}
         />
+      </div>
+
+      <h1 className="text-start font-bold text-2xl mt-12 mb-5 ml-3 flex items-center text-strong gap-2">
+        Biography <User />
+      </h1>
+
+      <div className="md:flex flew-row justify-center gap-4 items-center m-3">
+        <textarea 
+          className="w-full rounded-lg md:h-6 min-h-20 bg-primary" 
+          name='bio' 
+          placeholder='Tell something about you. . .'
+          />
       </div>
     </div>
   );
