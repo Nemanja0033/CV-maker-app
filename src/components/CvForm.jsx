@@ -144,7 +144,7 @@ const CvForm = ({handlePreview, handleChange, cvData}) => {
 
       <div className="md:flex flew-row justify-center gap-4 items-center m-3">
         <textarea 
-          className="w-full rounded-lg md:h-6 min-h-20 bg-primary" 
+          className="w-full hover:opacity-90 hover:scale-105 transition-all rounded-lg md:h-6 min-h-20 bg-primary" 
           name='bio' 
           placeholder='Tell something about you. . .'
           onChange={handleChange}
@@ -157,7 +157,7 @@ const CvForm = ({handlePreview, handleChange, cvData}) => {
 
       <div className="md:flex flew-row justify-center gap-4 items-center m-3">
         <textarea 
-          className="w-full rounded-lg md:h-6 min-h-20 bg-primary" 
+          className="w-full hover:opacity-90 hover:scale-105 transition-all rounded-lg md:h-6 min-h-20 bg-primary" 
           name='skills' 
           placeholder='Write about your skills. . .'
           onChange={handleChange}
