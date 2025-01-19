@@ -10,7 +10,7 @@ const Preview = ({cvData, handlePreview}) => {
 
   return (
     <div className="flex-row w-[600px] shadow-lg bg-second  rounded-lg text-strong">
-      <div className='flex justify-end items-center gap-4 m-3'>
+      <div className='flex justify-end gap-4 m-3'>
         <Button 
           onclick={handlePreview}
           icon={<Pencil size={20} />} 
