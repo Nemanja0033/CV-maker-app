@@ -1,21 +1,28 @@
 import React, { useRef } from 'react'
 import Button from './Button'
-import {Pencil, MapPin, Mail, Phone, Linkedin} from 'lucide-react'
+import {Pencil, MapPin, Mail, Phone, Linkedin, Printer} from 'lucide-react'
+import { useReactToPrint } from 'react-to-print';
 
 const Preview = ({cvData, handlePreview}) => {
 
-  const cvRef = useRef();
+  const contentRef = useRef();
+  const printFn = useReactToPrint({ contentRef })
 
   return (
     <div className="flex-row w-[600px] shadow-lg bg-second  rounded-lg text-strong">
-      <div className='flex justify-end items-center m-3'>
+      <div className='flex justify-end items-center gap-4 m-3'>
         <Button 
           onclick={handlePreview}
           icon={<Pencil size={20} />} 
           text={'Edit'}
         />
+        <Button
+          onclick={() => [printFn()]}
+          icon={<Printer />}
+          text={'Print'}
+        />
       </div>
-      <div ref={cvRef}>
+      <div ref={contentRef}>
         <div className='flex w-full h-20 justify-center gap-3 items-center font-bold text-4xl bg-strong text-second'>
           <h1>{cvData.firstName}</h1>
           <h1>{cvData.lastName}</h1>
